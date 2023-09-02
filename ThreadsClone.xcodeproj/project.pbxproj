@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7813339F2AA35D6D00A03398 /* ThreadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813339E2AA35D6D00A03398 /* ThreadCell.swift */; };
 		788871D22AA237CB00266F28 /* ThreadsCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788871D12AA237CB00266F28 /* ThreadsCloneApp.swift */; };
 		788871D42AA237CB00266F28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788871D32AA237CB00266F28 /* ContentView.swift */; };
 		788871D62AA237CC00266F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 788871D52AA237CC00266F28 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7813339E2AA35D6D00A03398 /* ThreadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCell.swift; sourceTree = "<group>"; };
 		788871CE2AA237CB00266F28 /* ThreadsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		788871D12AA237CB00266F28 /* ThreadsCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsCloneApp.swift; sourceTree = "<group>"; };
 		788871D32AA237CB00266F28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				788871F72AA27A1A00266F28 /* FeedView.swift */,
+				7813339E2AA35D6D00A03398 /* ThreadCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				788871F12AA2444A00266F28 /* ThreadsButtonModifier.swift in Sources */,
 				788871F42AA2783C00266F28 /* ThreadsTabView.swift in Sources */,
 				788871EA2AA238BC00266F28 /* LoginView.swift in Sources */,
+				7813339F2AA35D6D00A03398 /* ThreadCell.swift in Sources */,
 				788871D42AA237CB00266F28 /* ContentView.swift in Sources */,
 				788871EF2AA242BD00266F28 /* ThreadsTextFieldModifier.swift in Sources */,
 				788871D22AA237CB00266F28 /* ThreadsCloneApp.swift in Sources */,
