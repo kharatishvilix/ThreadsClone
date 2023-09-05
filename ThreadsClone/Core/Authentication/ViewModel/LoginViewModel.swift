@@ -12,6 +12,6 @@ class LoginViewModel: ObservableObject {
 
     @MainActor
     func login() async throws {
-        AuthService.shared.login(withEmail: email, password: password)
+        try await AuthService.shared.login(withEmail: email, password: password)
     }
 }
