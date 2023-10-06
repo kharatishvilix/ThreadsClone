@@ -5,12 +5,14 @@
 //  Created by Luka  Kharatishvili on 03.09.23.
 //
 
+import PhotosUI
 import SwiftUI
-
 struct EditProfileView: View {
     @State private var bio = ""
     @State private var link = ""
     @State private var isPrivateProfile = false
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: CurrentUserProfileViewModel
 
     var body: some View {
         NavigationStack {
@@ -28,7 +30,18 @@ struct EditProfileView: View {
                             Text("Luka Kharatishvili")
                         }
                         Spacer()
-                        ProfileImageView()
+
+                        PhotosPicker(selection: $viewModel.selectedItem) {
+                            if let image = viewModel.profileImage {
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } else {
+                                ProfileImageView()
+                            }
+                        }
                     }
                     Divider()
 
@@ -67,6 +80,7 @@ struct EditProfileView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
+                        dismiss()
                     }
                     .font(.subheadline)
                     .foregroundColor(.black)

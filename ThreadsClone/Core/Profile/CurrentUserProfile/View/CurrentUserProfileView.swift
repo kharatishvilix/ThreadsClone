@@ -11,6 +11,7 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     @State private var selectedFilter: ProfileThreadFilter = .threads
+    @State private var showEditProfile = false
 
     private var currentUser: User? {
         return viewModel.currentUser
@@ -24,6 +25,7 @@ struct CurrentUserProfileView: View {
                     ProfileHeaderView(user: currentUser)
 
                     Button {
+                        showEditProfile.toggle()
                     } label: {
                         Text("Edit Profile")
                             .font(.subheadline)
@@ -38,6 +40,10 @@ struct CurrentUserProfileView: View {
                                     .stroke(Color(.systemGray4), lineWidth: 1)
                             }
                     }
+                    .sheet(isPresented: $showEditProfile, content: {
+                        EditProfileView()
+                            .environmentObject(viewModel)
+                    })
 
                     // threads and replies section
 
