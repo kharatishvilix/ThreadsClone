@@ -36,7 +36,6 @@ struct ProfileView: View {
 
                 UserContentListView()
             }
-            
         }
         .navigationBarTitleDisplayMode(.inline)
         .padding(.horizontal)
