@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct CreateThreadView: View {
+    @StateObject var viewModel = CreateThreadViewModel()
     @State private var caption = ""
     @Environment(\.dismiss) var dismiss
+    private var user: User? {
+        return UserService.shared.currentUser
+    }
+
     var body: some View {
         NavigationStack {
             VStack {
                 HStack(alignment: .top) {
-                    ProfileImageView(user: nil, size: .small)
+                    ProfileImageView(user: user, size: .small)
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Kharatishvilix")
                             .fontWeight(.semibold)
@@ -49,6 +54,9 @@ struct CreateThreadView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Post") {
+                        Task { try await viewModel.uploadThread(caption: caption)
+                            dismiss()
+                        }
                     }
                     .font(.headline)
                     .opacity(caption.isEmpty ? 0.5 : 1.0)

@@ -5,6 +5,7 @@
 //  Created by Luka  Kharatishvili on 04.09.23.
 //
 
+import FirebaseFirestoreSwift
 import Foundation
 
 struct User: Identifiable, Codable, Hashable {
