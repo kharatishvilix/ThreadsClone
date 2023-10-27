@@ -23,7 +23,7 @@ struct CreateThreadView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Kharatishvilix")
                             .fontWeight(.semibold)
-                        TextField("Start a thread...", text: $caption)
+                        TextField("Start a thread...", text: $caption, axis: .vertical)
                     }
                     .font(.footnote)
                     Spacer()
