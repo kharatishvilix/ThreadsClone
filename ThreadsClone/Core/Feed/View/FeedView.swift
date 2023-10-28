@@ -20,6 +20,7 @@ struct FeedView: View {
             }
             .refreshable {
                 Task { try await viewModel.fetchThreads() }
+                SoundManager.instance.playSound(sound: .refresh)
             }
             .navigationTitle("Threads")
             .navigationBarTitleDisplayMode(.inline)

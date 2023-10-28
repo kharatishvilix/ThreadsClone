@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		78055ECF2AED59630029D87F /* UserContentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78055ECE2AED59630029D87F /* UserContentListViewModel.swift */; };
 		78055ED12AED5C7C0029D87F /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78055ED02AED5C7C0029D87F /* Timestamp.swift */; };
+		78055ED62AED63E90029D87F /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78055ED52AED63E90029D87F /* AudioPlayer.swift */; };
+		78055ED82AED67140029D87F /* newThread.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 78055ED72AED67140029D87F /* newThread.mp3 */; };
+		78055EDA2AED6D210029D87F /* refreshFeed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 78055ED92AED6D210029D87F /* refreshFeed.mp3 */; };
 		7813339F2AA35D6D00A03398 /* ThreadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7813339E2AA35D6D00A03398 /* ThreadCell.swift */; };
 		781333A22AA3B69000A03398 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781333A12AA3B69000A03398 /* ProfileImageView.swift */; };
 		781333A42AA3B7F700A03398 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781333A32AA3B7F700A03398 /* UserCell.swift */; };
@@ -57,6 +60,9 @@
 /* Begin PBXFileReference section */
 		78055ECE2AED59630029D87F /* UserContentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContentListViewModel.swift; sourceTree = "<group>"; };
 		78055ED02AED5C7C0029D87F /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
+		78055ED52AED63E90029D87F /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		78055ED72AED67140029D87F /* newThread.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newThread.mp3; sourceTree = "<group>"; };
+		78055ED92AED6D210029D87F /* refreshFeed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = refreshFeed.mp3; sourceTree = "<group>"; };
 		7813339E2AA35D6D00A03398 /* ThreadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCell.swift; sourceTree = "<group>"; };
 		781333A12AA3B69000A03398 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		781333A32AA3B7F700A03398 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -131,6 +137,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		78055ED22AED63460029D87F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				78055ED92AED6D210029D87F /* refreshFeed.mp3 */,
+				78055ED72AED67140029D87F /* newThread.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		781333A02AA3B67600A03398 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +217,7 @@
 		788871D02AA237CB00266F28 /* ThreadsClone */ = {
 			isa = PBXGroup;
 			children = (
+				78055ED22AED63460029D87F /* Sounds */,
 				788871E52AA2386100266F28 /* App */,
 				788871E42AA2385F00266F28 /* Core */,
 				788871E32AA2385D00266F28 /* Extensions */,
@@ -255,6 +271,7 @@
 			children = (
 				78EDD25E2AA7C3B400F9E76B /* PreviewProvider.swift */,
 				78055ED02AED5C7C0029D87F /* Timestamp.swift */,
+				78055ED52AED63E90029D87F /* AudioPlayer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -567,8 +584,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				788871D92AA237CC00266F28 /* Preview Assets.xcassets in Resources */,
+				78055ED82AED67140029D87F /* newThread.mp3 in Resources */,
 				788871D62AA237CC00266F28 /* Assets.xcassets in Resources */,
 				781333AD2AA50FAE00A03398 /* GoogleService-Info.plist in Resources */,
+				78055EDA2AED6D210029D87F /* refreshFeed.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +629,7 @@
 				788871D42AA237CB00266F28 /* ContentView.swift in Sources */,
 				788871EF2AA242BD00266F28 /* ThreadsTextFieldModifier.swift in Sources */,
 				78EDD25D2AA7C03100F9E76B /* ExploreViewModel.swift in Sources */,
+				78055ED62AED63E90029D87F /* AudioPlayer.swift in Sources */,
 				788871D22AA237CB00266F28 /* ThreadsCloneApp.swift in Sources */,
 				788871EC2AA2413300266F28 /* RegistrationView.swift in Sources */,
 				78CF58CB2AA6045A009A46EC /* LoginViewModel.swift in Sources */,
@@ -747,6 +767,7 @@
 				DEVELOPMENT_TEAM = TPWJ87TA8B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Motsvi;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -776,6 +797,7 @@
 				DEVELOPMENT_TEAM = TPWJ87TA8B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Motsvi;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
