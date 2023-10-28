@@ -26,6 +26,7 @@ class FeedViewModel: ObservableObject {
             let ownerUid = thread.ownerUid
             let threadAuthor = try await UserService.fetchUser(withUid: ownerUid)
             threads[i].user = threadAuthor
+            print("ras")
         }
     }
 }

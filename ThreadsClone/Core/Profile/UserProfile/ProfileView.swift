@@ -34,7 +34,7 @@ struct ProfileView: View {
 
                 // threads and replies section
 
-                UserContentListView()
+                UserContentListView(user: user)
             }
         }
         .navigationBarTitleDisplayMode(.inline)

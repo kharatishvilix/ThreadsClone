@@ -47,7 +47,9 @@ struct CurrentUserProfileView: View {
                     })
 
                     // threads and replies section
-                    UserContentListView()
+                    if let user = currentUser {
+                        UserContentListView(user: user)
+                    }
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
