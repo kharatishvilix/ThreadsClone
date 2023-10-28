@@ -62,7 +62,7 @@ class AuthService {
     // upload data to database
     @MainActor
     private func uploadUserData(withEmail email: String, password: String, fullname: String, username: String, id: String) async throws {
-        let user = User(id: id, fullname: fullname, username: username, password: password)
+        let user = User(id: id, fullname: fullname, username: username, password: password, email: email)
         guard let userData = try? Firestore.Encoder().encode(user) else { return }
         try await Firestore.firestore().collection("users").document(id).setData(userData)
         UserService.shared.currentUser = user

@@ -21,9 +21,10 @@ struct CreateThreadView: View {
                 HStack(alignment: .top) {
                     ProfileImageView(user: user, size: .small)
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Kharatishvilix")
+                        Text(user?.username ?? "")
                             .fontWeight(.semibold)
                         TextField("Start a thread...", text: $caption, axis: .vertical)
+                            .autocorrectionDisabled(true)
                     }
                     .font(.footnote)
                     Spacer()
