@@ -22,7 +22,7 @@ struct ProfileView: View {
             VStack(spacing: 20) {
                 ProfileHeaderView(user: user)
                 Button {
-                    SoundManager.instance.playSound(sound: .newThread)
+                    SoundManager.instance.playSound(sound: .newthread)
                 } label: {
                     Text("Follow")
                         .font(.subheadline)

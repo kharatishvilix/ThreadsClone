@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
-
 struct ThreadCell: View {
     let thread: Thread
+    private var currentUser: User? {
+        return CurrentUserProfileViewModel().currentUser
+    }
+
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 12) {
@@ -24,9 +27,18 @@ struct ThreadCell: View {
                             .foregroundColor(Color(.systemGray3))
 
                         Button {
+                            if thread.ownerUid == currentUser?.id {
+                                ThreadService.deleteThread(threadID: thread.threadId!)
+                                SoundManager.instance.playSound(sound: .deletethread)
+                            }
                         } label: {
-                            Image(systemName: "ellipsis")
-                                .foregroundColor(Color(.darkGray))
+                            if thread.ownerUid == currentUser?.id {
+                                Image(systemName: "trash")
+                                    .foregroundColor(Color(.red))
+                            } else {
+                                Image(systemName: "ellipsis")
+                                    .foregroundColor(Color(.darkGray))
+                            }
                         }
                     }
                     Text(thread.caption)

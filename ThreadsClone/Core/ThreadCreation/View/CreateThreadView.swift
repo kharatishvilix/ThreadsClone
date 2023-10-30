@@ -57,7 +57,7 @@ struct CreateThreadView: View {
                     Button("Post") {
                         Task { try await viewModel.uploadThread(caption: caption)
                             try await FeedViewModel().fetchThreads()
-                            SoundManager.instance.playSound(sound: .newThread)
+                            SoundManager.instance.playSound(sound: .newthread)
                             dismiss()
                         }
                     }

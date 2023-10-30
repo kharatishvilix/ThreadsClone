@@ -28,4 +28,9 @@ struct ThreadService {
         let threads = snapshot.documents.compactMap({ try? $0.data(as: Thread.self) })
         return threads.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() })
     }
+
+    static func deleteThread(threadID: String) {
+        let threadReference = Firestore.firestore().collection("threads").document(threadID)
+        threadReference.delete()
+    }
 }

@@ -24,6 +24,7 @@
 		781333B62AA5105E00A03398 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 781333B52AA5105E00A03398 /* FirebaseStorage */; };
 		781333BA2AA5255500A03398 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781333B92AA5255500A03398 /* RegistrationViewModel.swift */; };
 		781333BC2AA5262D00A03398 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781333BB2AA5262D00A03398 /* AuthService.swift */; };
+		783B95432AF06F30003AC45C /* deleteThread.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 783B95422AF06F30003AC45C /* deleteThread.mp3 */; };
 		788871D22AA237CB00266F28 /* ThreadsCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788871D12AA237CB00266F28 /* ThreadsCloneApp.swift */; };
 		788871D42AA237CB00266F28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788871D32AA237CB00266F28 /* ContentView.swift */; };
 		788871D62AA237CC00266F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 788871D52AA237CC00266F28 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		781333AC2AA50FAE00A03398 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		781333B92AA5255500A03398 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		781333BB2AA5262D00A03398 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		783B95422AF06F30003AC45C /* deleteThread.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = deleteThread.mp3; sourceTree = "<group>"; };
 		788871CE2AA237CB00266F28 /* ThreadsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		788871D12AA237CB00266F28 /* ThreadsCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsCloneApp.swift; sourceTree = "<group>"; };
 		788871D32AA237CB00266F28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		78055ED22AED63460029D87F /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				783B95422AF06F30003AC45C /* deleteThread.mp3 */,
 				78055ED92AED6D210029D87F /* refreshFeed.mp3 */,
 				78055ED72AED67140029D87F /* newThread.mp3 */,
 			);
@@ -584,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				788871D92AA237CC00266F28 /* Preview Assets.xcassets in Resources */,
+				783B95432AF06F30003AC45C /* deleteThread.mp3 in Resources */,
 				78055ED82AED67140029D87F /* newThread.mp3 in Resources */,
 				788871D62AA237CC00266F28 /* Assets.xcassets in Resources */,
 				781333AD2AA50FAE00A03398 /* GoogleService-Info.plist in Resources */,

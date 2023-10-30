@@ -7,7 +7,8 @@ class SoundManager: ObservableObject {
     var player: AVAudioPlayer?
     enum soundOption: String {
         case refresh = "refreshFeed"
-        case newThread
+        case newthread = "newThread"
+        case deletethread = "deleteThread"
     }
 
     func playSound(sound: soundOption) {
