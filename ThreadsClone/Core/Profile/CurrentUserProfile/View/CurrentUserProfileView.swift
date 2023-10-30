@@ -12,7 +12,6 @@ import SwiftUI
 struct CurrentUserProfileView: View {
     @State private var selectedFilter: ProfileThreadFilter = .threads
     @State private var showEditProfile = false
-
     private var currentUser: User? {
         return viewModel.currentUser
     }
@@ -61,6 +60,9 @@ struct CurrentUserProfileView: View {
                         .foregroundColor(.black)
                     }
                 }
+            }
+            .refreshable {
+                SoundManager.instance.playSound(sound: .refresh)
             }
             .padding(.horizontal)
         }

@@ -52,6 +52,7 @@ struct UserContentListView: View {
                 ForEach(viewModel.threads) { thread in
                     ThreadCell(thread: thread)
                 }
+                
             }
         }
         .padding(.vertical, 8)

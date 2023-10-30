@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
+    @State private var longPressed = false
     var user: User?
     init(user: User?) {
         self.user = user
@@ -33,7 +34,11 @@ struct ProfileHeaderView: View {
                     .foregroundColor(.gray)
             }
             Spacer()
+
             ProfileImageView(user: user, size: .medium)
+                .onLongPressGesture {
+                    self.longPressed.toggle()
+                }
         }
     }
 }

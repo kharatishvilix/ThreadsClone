@@ -1,3 +1,4 @@
+import AVFoundation
 import AVKit
 import Firebase
 
@@ -12,6 +13,7 @@ class SoundManager: ObservableObject {
     func playSound(sound: soundOption) {
         guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else { return }
         do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: [.duckOthers, .mixWithOthers])
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
         } catch {

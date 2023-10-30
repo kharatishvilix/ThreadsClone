@@ -22,6 +22,7 @@ struct ProfileView: View {
             VStack(spacing: 20) {
                 ProfileHeaderView(user: user)
                 Button {
+                    SoundManager.instance.playSound(sound: .newThread)
                 } label: {
                     Text("Follow")
                         .font(.subheadline)
@@ -36,6 +37,10 @@ struct ProfileView: View {
 
                 UserContentListView(user: user)
             }
+        }
+        .refreshable {
+            Task { try await FeedViewModel().fetchThreads() }
+            SoundManager.instance.playSound(sound: .refresh)
         }
         .navigationBarTitleDisplayMode(.inline)
         .padding(.horizontal)
