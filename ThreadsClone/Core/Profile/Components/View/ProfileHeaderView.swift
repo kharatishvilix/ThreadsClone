@@ -9,9 +9,25 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     @State private var longPressed = false
+    @Environment(\.dismiss) var dismiss
     var user: User?
     init(user: User?) {
         self.user = user
+    }
+
+    struct ProfileImageModalView: View {
+        @Binding var showModal: Bool
+        var user: User?
+
+        var body: some View {
+            ZStack {
+                ProfileImageView(user: user, size: .fullSize)
+            }
+            .onTapGesture {
+                showModal = false
+            }
+            .edgesIgnoringSafeArea(.all)
+        }
     }
 
     var body: some View {
@@ -33,11 +49,15 @@ struct ProfileHeaderView: View {
                     .font(.caption2)
                     .foregroundColor(.gray)
             }
+
             Spacer()
 
             ProfileImageView(user: user, size: .medium)
                 .onLongPressGesture {
                     self.longPressed.toggle()
+                }
+                .sheet(isPresented: $longPressed) {
+                    ProfileImageModalView(showModal: self.$longPressed, user: self.user)
                 }
         }
     }

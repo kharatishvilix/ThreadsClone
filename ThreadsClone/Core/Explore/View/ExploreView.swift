@@ -10,11 +10,21 @@ import SwiftUI
 struct ExploreView: View {
     @State private var searchText = ""
     @StateObject var viewModel = ExploreViewModel()
+    var filteredUsers: [User] {
+        if searchText.isEmpty {
+            return viewModel.users
+        } else {
+            return viewModel.users.filter { user in
+                user.username.lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack {
-                    ForEach(viewModel.users) { user in
+                    ForEach(filteredUsers) { user in
                         NavigationLink(value: user) {
                             VStack {
                                 UserCell(user: user)
@@ -30,6 +40,8 @@ struct ExploreView: View {
             })
             .navigationTitle("Search")
             .searchable(text: $searchText, prompt: "Search")
+            .autocorrectionDisabled(true)
+            .autocapitalization(.none)
         }
     }
 }
