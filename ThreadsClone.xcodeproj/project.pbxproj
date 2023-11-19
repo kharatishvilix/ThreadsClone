@@ -25,6 +25,7 @@
 		781333BA2AA5255500A03398 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781333B92AA5255500A03398 /* RegistrationViewModel.swift */; };
 		781333BC2AA5262D00A03398 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781333BB2AA5262D00A03398 /* AuthService.swift */; };
 		783B95432AF06F30003AC45C /* deleteThread.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 783B95422AF06F30003AC45C /* deleteThread.mp3 */; };
+		787E8FED2AF3138600AFAC9D /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787E8FEC2AF3138600AFAC9D /* FollowService.swift */; };
 		788871D22AA237CB00266F28 /* ThreadsCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788871D12AA237CB00266F28 /* ThreadsCloneApp.swift */; };
 		788871D42AA237CB00266F28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788871D32AA237CB00266F28 /* ContentView.swift */; };
 		788871D62AA237CC00266F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 788871D52AA237CC00266F28 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		781333B92AA5255500A03398 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		781333BB2AA5262D00A03398 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		783B95422AF06F30003AC45C /* deleteThread.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = deleteThread.mp3; sourceTree = "<group>"; };
+		787E8FEC2AF3138600AFAC9D /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
 		788871CE2AA237CB00266F28 /* ThreadsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		788871D12AA237CB00266F28 /* ThreadsCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsCloneApp.swift; sourceTree = "<group>"; };
 		788871D32AA237CB00266F28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				78EDD2542AA657B000F9E76B /* UserService.swift */,
 				7899383C2ADDD91200FA1044 /* ImageUploader.swift */,
 				78A962472AEC5F3D00888BE9 /* ThreadService.swift */,
+				787E8FEC2AF3138600AFAC9D /* FollowService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				788871EA2AA238BC00266F28 /* LoginView.swift in Sources */,
 				781333A42AA3B7F700A03398 /* UserCell.swift in Sources */,
 				781333A22AA3B69000A03398 /* ProfileImageView.swift in Sources */,
+				787E8FED2AF3138600AFAC9D /* FollowService.swift in Sources */,
 				7813339F2AA35D6D00A03398 /* ThreadCell.swift in Sources */,
 				788871D42AA237CB00266F28 /* ContentView.swift in Sources */,
 				788871EF2AA242BD00266F28 /* ThreadsTextFieldModifier.swift in Sources */,
@@ -771,12 +775,11 @@
 				DEVELOPMENT_TEAM = TPWJ87TA8B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Motsvi;
+				INFOPLIST_KEY_CFBundleDisplayName = ThreadsX;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -801,12 +804,11 @@
 				DEVELOPMENT_TEAM = TPWJ87TA8B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Motsvi;
+				INFOPLIST_KEY_CFBundleDisplayName = ThreadsX;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

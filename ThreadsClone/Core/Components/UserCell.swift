@@ -20,7 +20,8 @@ struct UserCell: View {
             }
             .font(.footnote)
             Spacer()
-            Button(action: /*@START_MENU_TOKEN@*/ {}/*@END_MENU_TOKEN@*/,
+
+            Button(action: {},
                    label: {
                        Text("Follow")
                    })

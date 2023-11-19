@@ -8,16 +8,27 @@
 import SwiftUI
 
 struct LoginView: View {
+    @Environment(\.colorScheme) var colorScheme
+
     @StateObject var viewModel = LoginViewModel()
     var body: some View {
         NavigationStack {
             VStack {
                 Spacer()
-                Image("threads-icon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 300, height: 300)
-                    .padding()
+                if colorScheme == .dark {
+                    Image("threads-icon-dark")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                        .padding()
+                } else {
+                    Image("threads-icon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                        .padding()
+                }
+
                 VStack {
                     TextField("Enter your email", text: $viewModel.email)
                         .autocapitalization(.none)

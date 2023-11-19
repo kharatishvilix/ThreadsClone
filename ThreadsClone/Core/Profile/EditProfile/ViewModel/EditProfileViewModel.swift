@@ -14,7 +14,9 @@ class EditProfileViewModel: ObservableObject {
         didSet { Task { await loadImage() }}
     }
 
+    @State private var bioText: String = ""
     @Published var profileImage: Image?
+
     private var uiImage: UIImage?
     func updateUserData() async throws {
         try await updateProfileImage()

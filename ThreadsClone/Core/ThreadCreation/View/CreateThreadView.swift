@@ -56,9 +56,11 @@ struct CreateThreadView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Post") {
                         Task { try await viewModel.uploadThread(caption: caption)
-                            try await FeedViewModel().fetchThreads()
                             SoundManager.instance.playSound(sound: .newthread)
                             dismiss()
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            Task { try await ThreadService.fetchThreads() }
                         }
                     }
                     .font(.headline)

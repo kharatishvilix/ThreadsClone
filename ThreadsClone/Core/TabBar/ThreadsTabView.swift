@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ThreadsTabView: View {
     @State private var selectedTab = 0
+    @State private var previousTab = 0
     @State private var showCreateThreadView = false
     @Environment(\.dismiss) var dismiss
 
@@ -19,17 +20,18 @@ struct ThreadsTabView: View {
                     Image(systemName: selectedTab == 0 ? "house.fill" : "house")
                         .environment(\.symbolVariants, selectedTab == 0 ? .fill : .none)
                 }
-                .onAppear { selectedTab = 0 }
+                .onAppear { selectedTab = 0; previousTab = selectedTab
+                }
                 .tag(0)
 
             ExploreView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
-                .onAppear { selectedTab = 1 }
+                .onAppear { selectedTab = 1; previousTab = selectedTab }
                 .tag(1)
 
-            FeedView()
+            Text("")
                 .tabItem {
                     Image(systemName: "plus")
                 }
@@ -41,7 +43,7 @@ struct ThreadsTabView: View {
                     Image(systemName: selectedTab == 3 ? "heart.fill" : "heart")
                         .environment(\.symbolVariants, selectedTab == 3 ? .fill : .none)
                 }
-                .onAppear { selectedTab = 3 }
+                .onAppear { selectedTab = 3; previousTab = selectedTab }
                 .tag(3)
 
             CurrentUserProfileView()
@@ -49,7 +51,7 @@ struct ThreadsTabView: View {
                     Image(systemName: selectedTab == 4 ? "person.fill" : "person")
                         .environment(\.symbolVariants, selectedTab == 4 ? .fill : .none)
                 }
-                .onAppear { selectedTab = 4 }
+                .onAppear { selectedTab = 4; previousTab = selectedTab }
                 .tag(4)
         }
 
@@ -57,7 +59,8 @@ struct ThreadsTabView: View {
             showCreateThreadView = selectedTab == 2
         })
         .sheet(isPresented: $showCreateThreadView, onDismiss: {
-            selectedTab = 0
+            selectedTab = previousTab
+            print("DEBUG: \(previousTab)")
         }, content: {
             CreateThreadView()
         })

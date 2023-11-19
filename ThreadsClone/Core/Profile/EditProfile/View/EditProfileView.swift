@@ -9,9 +9,10 @@ import PhotosUI
 import SwiftUI
 struct EditProfileView: View {
     let user: User
-    @State private var bio = ""
     @State private var link = ""
     @State private var isPrivateProfile = false
+    @State private var bio = ""
+
     @Environment(\.dismiss) var dismiss
     @StateObject var viewModel = EditProfileViewModel()
 

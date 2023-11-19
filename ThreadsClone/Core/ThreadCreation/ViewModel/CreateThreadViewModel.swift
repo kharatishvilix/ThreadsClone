@@ -13,5 +13,8 @@ class CreateThreadViewModel: ObservableObject {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let thread = Thread(ownerUid: uid, caption: caption, timestamp: Timestamp(), likes: 0)
         try await ThreadService.UploadThread(thread)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            Task { try await ThreadService.fetchThreads() }
+        }
     }
 }

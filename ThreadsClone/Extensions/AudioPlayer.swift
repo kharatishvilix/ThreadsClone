@@ -12,9 +12,9 @@ class SoundManager: ObservableObject {
     }
 
     func playSound(sound: soundOption) {
-        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else { return }
+        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mpp3") else { return }
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: [.duckOthers, .mixWithOthers])
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: [])
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
         } catch {
